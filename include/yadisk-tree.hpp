@@ -1,27 +1,17 @@
-using yadisk::Client;
-using yadisk::path;
+using yadisk::ops::Resource;
+using yadisk::ops::Predicate;
 using yadisk::ops::Tree;
+using yadisk::Client;
+using std::string;
+using std::map;
+ 
+using Resources = std::vector<Resource>;
  
 namespace yadisk 
 {
-	namespace ops 
-	{
-		Tree tree(Client& client, path home = ‘/’)
-		{
-			Tree resultTree;
-			Resources  listAllFiles = client.list();
-			
-			Resources curEdges;
-             			Resource curEdge = listAllFiles.first;	
-    			for (int i = 0; i < listAllFiles.size(); ++i)
-			{
-             			                   curEdges.push_back(listAllFiles[i]);
-			}
-			for(int i = 0; i < curEdges.size(); ++i)
-			{
-          				resultFind[curEdges[i].path].insert(curEdges);
-			}
-            		}	
-           	 }	
-            	return resultFind;
+  namespace ops 
+  {
+      map<string, Resources> find_tree(Client& client, Predicate pred = Hash);      
+      void addCopiesInResult(Resources curEdgeCopies, map<string, Resources>& resultFind);      
+  }
 }
