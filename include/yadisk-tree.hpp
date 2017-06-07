@@ -11,7 +11,6 @@ namespace yadisk
 {
   namespace ops 
   {
-      map<string, Resources> find_tree(Client& client, Predicate pred = Hash);      
-      void addCopiesInResult(Resources curEdgeCopies, map<string, Resources>& resultFind);      
+      Tree tree(Client& client, path home = ‘/’);      
   }
 }
