@@ -1,4 +1,4 @@
-# yadisk-tree
+# yadisk-tree [![Build Status](https://travis-ci.org/yadisk-ops/yadisk-tree.svg?branch=master)](https://travis-ci.org/yadisk-ops/yadisk-tree)
 Данный репозиторий содержит часть всеобщего проекта Yadisk - Operations. 
 
 # Задачи
