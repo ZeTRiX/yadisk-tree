@@ -1,12 +1,22 @@
-language: generic
+language: сpp
 sudo: required
 dist: trusty
 
-os: osx
+os: linux
 
 script:
 - cmake -H. -B_builds
 - cmake --build _builds/
+- cmake --build _builds/ --target test
+- cmake --build _builds/ --target package
+- doxygen docs/doxygen.conf
 
---target test1
-
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake
+      - cmake-data
+      - doxygen
+      - doxygen-doc
