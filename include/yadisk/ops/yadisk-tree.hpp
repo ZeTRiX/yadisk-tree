@@ -2,8 +2,8 @@
 #define YADISK-TREE_HPP
 
 #include <yadisk/ops/Tree.hpp>
-#include <yadisk/url/path.hpp>
-#include <yadisk/Client.hpp>
+#include <url/path.hpp>
+#include "Client.hpp"
 
 using yadisk::Client;
 using yadisk::path;
