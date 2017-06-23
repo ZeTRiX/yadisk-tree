@@ -1,5 +1,5 @@
-#ifndef YADISK-TREE_HPP
-#define YADISK-TREE_HPP
+#ifndef TREE_HPP
+#define TREE_HPP
 
 #include <yadisk/ops/Tree.hpp>
 #include <url/path.hpp>
