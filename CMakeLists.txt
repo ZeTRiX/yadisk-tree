@@ -1,12 +1,12 @@
+
 cmake_minimum_required(VERSION 3.0)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+SET(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(cmake/HunterGate.cmake)
 HunterGate(
-    URL  "https://github.com/yadisk-ops/hunter/archive/v0.18.47.2.tar.gz"
-    SHA1 "fe0f3a4d337ae08dbea640fd1ebc1e448919fcd3"
-    LOCAL
+    URL  "https://github.com/yadisk-ops/hunter/archive/v0.18.47.3.tar.gz"
+    SHA1 "ccc53422f9a992ca12042179a1d2471bd3959b48"
 )
 
 project(tree)
