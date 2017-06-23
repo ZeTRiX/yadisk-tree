@@ -1,16 +1,26 @@
-using yadisk::ops::Resource;
-using yadisk::ops::Predicate;
-using yadisk::ops::Tree;
+#ifndef YADISK-TREE_HPP
+#define YADISK-TREE_HPP
+
+#include <yadisk/ops/Tree.hpp>
+#include <yadisk/url/path.hpp>
+#include <yadisk/Client.hpp>
+
 using yadisk::Client;
-using std::string;
-using std::map;
- 
-using Resources = std::vector<Resource>;
+using yadisk::path;
+using yadisk::ops::Tree;
  
 namespace yadisk 
 {
-  namespace ops 
-  {
-      Tree tree(Client& client, path home = ‘/’);      
-  }
+namespace ops {
+ 
+/**
+Получение слепка диска
+\param[in] ссылка на client-yadisk
+\param[in] путь
+\return возвращает дерево - слепок диска
+**/
+  Tree tree(Client& client, path home = ‘/’) ;
 }
+}
+
+#endif
