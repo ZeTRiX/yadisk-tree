@@ -1,6 +1,4 @@
-using yadisk::Client;
-using yadisk::path;
-using yadisk::ops::Tree;
+#include "yadisk/ops/yadisk-tree.hpp"
  
 namespace yadisk 
 {
