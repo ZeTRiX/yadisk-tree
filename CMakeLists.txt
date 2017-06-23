@@ -20,6 +20,49 @@ SET(PROJECT_NAME "tree")
 
 option(BUILD_TESTS "Build tests" ON)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+option(BUILD_TESTS "Build tests" ON)
+# option(BUILD_EXAMPLES "Build examples" ON)
 
-file(GLOB ${PROJECT_NAME}_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/sources/*) 
+hunter_add_package(Boost COMPONENTS system filesystem)
+find_package(Boost CONFIG REQUIRED system filesystem)
+
+hunter_add_package(OpenSSL)
+find_package(OpenSSL REQUIRED)
+
+hunter_add_package(CURL)
+find_package(CURL CONFIG REQUIRED)
+
+hunter_add_package(nlohmann-json)
+find_package(nlohmann-json REQUIRED)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+# SET(SRC_LIST ${CMAKE_CURRENT_SOURCE_DIR}/sources/replica.cpp)
+# ADD_EXECUTABLE(${PROJECT_NAME} ${SRC_LIST})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/sources)
+file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/sources/*)
+
+add_library(${PROJECT_NAME} ${SOURCES}) 
+target_link_libraries(${PROJECT_NAME}
+	Boost::filesystem Boost::system
+	OpenSSL::SSL OpenSSL::Crypto
+	CURL::libcurl
+ 	nlohmann-json::nlohmann-json
+)
+hunter_add_package(yadisk-client)
+find_package(yadisk-client)
+target_link_libraries(yadisk-tree yadisk-client::yadisk-client)
+
+install(TARGETS yadisk-tree
+		EXPORT yadisk-tree-config
+		ARCHIVE DESTINATION lib
+		LIBRARY DESTINATION lib
+)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include)
+
+install(EXPORT yadisk-tree-config
+		NAMESPACE yadisk-ops::
+		DESTINATION cmake
+)
+
+include(CPackConfig.cmake)
