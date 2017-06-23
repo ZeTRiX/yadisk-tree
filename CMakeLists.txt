@@ -45,7 +45,7 @@ target_link_libraries(${PROJECT_NAME}
 
 hunter_add_package(yadisk-client)
 find_package(yadisk-client)
-target_link_libraries(yadisk-tree yadisk-client::yadisk-client)
+//target_link_libraries(yadisk-tree yadisk-client::yadisk-client)
 
 
 if(BUILD_TESTS)
