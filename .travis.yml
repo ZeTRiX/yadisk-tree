@@ -1,22 +1,25 @@
-language: сpp
+language: cpp
 sudo: required
 dist: trusty
 
-os: linux
+group: edge
 
-script:
-- cmake -H. -B_builds
-- cmake --build _builds/
-- cmake --build _builds/ --target test
-- cmake --build _builds/ --target package
-- doxygen docs/doxygen.conf
+os: linux
 
 addons:
   apt:
     sources:
       - george-edison55-precise-backports
     packages:
-      - cmake
       - cmake-data
+      - cmake
       - doxygen
       - doxygen-doc
+
+script:
+- cmake -H. -B_builds
+- cmake --build _builds/
+- cmake --build _builds/ --target yadisk-replica
+- cmake --build _builds/ --target test
+- cmake --build _builds/ --target package
+- doxygen docs/doxygen.conf
