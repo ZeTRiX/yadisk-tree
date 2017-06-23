@@ -19,7 +19,7 @@ addons:
 script:
 - cmake -H. -B_builds
 - cmake --build _builds/
-- cmake --build _builds/ --target yadisk-replica
-- cmake --build _builds/ --target test
-- cmake --build _builds/ --target package
+- cmake --build _builds/ --target yadisk-tree
+#- cmake --build _builds/ --target test
+#- cmake --build _builds/ --target package
 - doxygen docs/doxygen.conf
