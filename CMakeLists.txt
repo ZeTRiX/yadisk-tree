@@ -9,14 +9,13 @@ HunterGate(
     LOCAL
 )
 
-project(yadisk-tree) # this command set PROJECT_NAME to "yadisk-subtract"
+project(yadisk-tree)
 
-set(SUBTRACT_VERSION_MAJOR 0)
-set(SUBTRACT_VERSION_MINOR 1)
-set(SUBTRACT_VERSION_PATCH 0)
-set(SUBTRACT_VERSION ${SUBTRACT_VERSION_MAJOR}.${SUBTRACT_VERSION_MINOR}.${SUBTRACT_VERSION_PATCH})
-set(SUBTRACT_VERSION_STRING "v${SUBTRACT_VERSION}")
-#SET(PROJECT_NAME "yadisk-subtract")
+set(TREE_VERSION_MAJOR 0)
+set(TREE_VERSION_MINOR 1)
+set(TREE_VERSION_PATCH 0)
+set(TREE_VERSION ${TREE_VERSION_MAJOR}.${TREE_VERSION_MINOR}.${TREE_VERSION_PATCH})
+set(TREE_VERSION_STRING "v${TREE_VERSION}")
 
 option(BUILD_TESTS "Build tests" ON)
 
@@ -32,11 +31,10 @@ find_package(CURL CONFIG REQUIRED)
 hunter_add_package(nlohmann-json)
 find_package(nlohmann-json REQUIRED)
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/source)
-
 file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/source/*)
-
-add_library(${PROJECT_NAME} ${SOURCES}) # static or shared depends on value BUILD_SHARED_LIBS variable
+add_library(${PROJECT_NAME} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME}
 	Boost::filesystem Boost::system
@@ -45,7 +43,6 @@ target_link_libraries(${PROJECT_NAME}
 	nlohmann-json::nlohmann-json
 )
 
-target_include_directories(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 if(BUILD_TESTS)
