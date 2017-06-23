@@ -20,8 +20,6 @@ SET(PROJECT_NAME "tree")
 
 option(BUILD_TESTS "Build tests" ON)
 
-option(BUILD_TESTS "Build tests" ON)
-# option(BUILD_EXAMPLES "Build examples" ON)
 
 hunter_add_package(Boost COMPONENTS system filesystem)
 find_package(Boost CONFIG REQUIRED system filesystem)
