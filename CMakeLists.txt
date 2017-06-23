@@ -33,9 +33,9 @@ find_package(CURL CONFIG REQUIRED)
 hunter_add_package(nlohmann-json)
 find_package(nlohmann-json REQUIRED)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/sources)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/source)
 
-file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/sources/*)
+file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/source/*)
 
 add_library(${PROJECT_NAME} ${SOURCES}) # static or shared depends on value BUILD_SHARED_LIBS variable
 
