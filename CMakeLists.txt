@@ -74,4 +74,4 @@ install(EXPORT yadisk-tree-config
 		DESTINATION cmake
 )
 
-include(CPackConfig.cmake)
+# include(CPackConfig.cmake)
