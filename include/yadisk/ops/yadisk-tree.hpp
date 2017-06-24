@@ -3,8 +3,7 @@
 
 #include "Client.hpp"
 #include "Tree.hpp"
-
-using na
+#include "path.hpp"
 
 using yadisk::Client;
 using yadisk::ops::Tree;
@@ -21,8 +20,14 @@ namespace ops {
 **/
   auto tree(Client& client, path home = ‘/’) -> Tree&;
  
+ /**
+Добавление данных
+\param[in] указатель на дерево
+\param[in] путь
+**/ 
  
-
+ void recursive_add(Tree& input, string path, yadisk::ops::Node* parent = NULL)
+ 
   
 }
 }
