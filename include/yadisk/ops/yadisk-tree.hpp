@@ -3,7 +3,7 @@
 
 #include "Client.hpp"
 #include "Tree.hpp"
-#include "path.hpp"
+#include "url/path.hpp"
 
 using yadisk::Client;
 using yadisk::ops::Tree;
