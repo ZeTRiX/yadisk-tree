@@ -18,7 +18,7 @@ namespace ops {
 \param[in] путь
 \return возвращает дерево - слепок диска
 **/
-  auto tree(Client& client, path home = ‘/’) -> Tree&;
+  Tree tree(Client& client, path home = ‘/’) ;
  
  /**
 Добавление данных
@@ -26,7 +26,7 @@ namespace ops {
 \param[in] путь
 **/ 
  
- void recursive_add(Tree& input, string path, yadisk::ops::Node* parent = NULL)
+ //void recursive_add(Tree& input, string path, yadisk::ops::Node* parent = NULL)
  
   
 }
