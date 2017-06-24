@@ -1,9 +1,10 @@
 #ifndef TREE_HPP
 #define TREE_HPP
 
-#include <yadisk/ops/Tree.hpp>
-#include <url/path.hpp>
 #include "Client.hpp"
+#include "Tree.hpp"
+
+using na
 
 using yadisk::Client;
 using yadisk::ops::Tree;
@@ -18,7 +19,11 @@ namespace ops {
 \param[in] путь
 \return возвращает дерево - слепок диска
 **/
-  Tree tree(Client& client, path home = ‘/’);
+  auto tree(Client& client, path home = ‘/’) -> Tree&;
+ 
+ 
+
+  
 }
 }
 
