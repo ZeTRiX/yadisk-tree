@@ -7,6 +7,8 @@
 
 //using yadisk::Client;
 //using yadisk::ops::Tree;
+
+
  
 namespace yadisk 
 {
@@ -18,7 +20,7 @@ namespace yadisk
  \return возвращает дерево - слепок диска
  **/
   
-  ops::Tree tree(Client& client, path home = '/') ;
+  ops::Tree tree(Client& client, url::path home = '/') ;
 
  /**
  Добавление данных
