@@ -27,6 +27,6 @@ using namespace url;
  \param[in] указатель на дерево
  \param[in] путь
  **/ 
-  void recursive_add(ops::Tree& input, string path, ops::Node* parent = NULL)
+  void recursive_add(ops::Tree& input, string path, ops::Node* parent = NULL);
 
 #endif
