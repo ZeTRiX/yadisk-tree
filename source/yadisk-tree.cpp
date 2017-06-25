@@ -1,4 +1,4 @@
-using namespace std;
+//using namespace std;
 
 #include "yadisk/ops/yadisk-tree.hpp"
 
@@ -17,7 +17,7 @@ namespace yadisk{
 		return *client_tree;
 		}
 
-		void recursive_add(Tree& input, string path, Node* parent = NULL)
+		void recursive_add(Tree& input, std::string path, Node* parent = NULL)
 		{
 			json data = client.info();
 			Resource rsc(data);
