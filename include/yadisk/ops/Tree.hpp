@@ -36,7 +36,7 @@ namespace yadisk
 
 			~Tree();
 
-		protected:
+		//protected:
 
 			auto recursive_files(Node* node, json* files) -> void;
 
