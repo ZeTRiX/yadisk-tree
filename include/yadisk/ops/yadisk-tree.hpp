@@ -5,13 +5,11 @@
 #include <yadisk/ops/Tree.hpp>
 #include <url/path.hpp>
 
-using yadisk::Client;
-using yadisk::ops::Tree;
+//using yadisk::Client;
+//using yadisk::ops::Tree;
  
 namespace yadisk 
 {
- namespace ops 
- {
  
  /**
  Получение слепка диска
@@ -20,7 +18,7 @@ namespace yadisk
  \return возвращает дерево - слепок диска
  **/
   
-  Tree tree(Client& client, path home = '/') ;
+  ops::Tree tree(Client& client, path home = '/') ;
 
  /**
  Добавление данных
@@ -28,6 +26,5 @@ namespace yadisk
  \param[in] путь
  **/ 
   void recursive_add(Tree& input, string path, yadisk::ops::Node* parent = NULL)
- }
 }
 #endif
