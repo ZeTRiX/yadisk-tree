@@ -1,8 +1,8 @@
 #ifndef TREE_HPP
 #define TREE_HPP
 
-#include "Client.hpp"
-#include "Tree.hpp"
+//nclude "Client.hpp"
+//nclude "Tree.hpp"
 //#include "url/path.hpp"
 
 using yadisk::Client;
@@ -13,17 +13,17 @@ namespace yadisk
 namespace ops {
  
 /**
-Получение слепка диска
-\param[in] ссылка на client-yadisk
-\param[in] путь
-\return возвращает дерево - слепок диска
+ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г±Г«ГҐГЇГЄГ  Г¤ГЁГ±ГЄГ 
+\param[in] Г±Г±Г»Г«ГЄГ  Г­Г  client-yadisk
+\param[in] ГЇГіГІГј
+\return ГўГ®Г§ГўГ°Г Г№Г ГҐГІ Г¤ГҐГ°ГҐГўГ® - Г±Г«ГҐГЇГ®ГЄ Г¤ГЁГ±ГЄГ 
 **/
   Tree tree(Client& client, path home = '/') ;
  
  /**
-Добавление данных
-\param[in] указатель на дерево
-\param[in] путь
+Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г¤Г Г­Г­Г»Гµ
+\param[in] ГіГЄГ Г§Г ГІГҐГ«Гј Г­Г  Г¤ГҐГ°ГҐГўГ®
+\param[in] ГЇГіГІГј
 **/ 
  
  //void recursive_add(Tree& input, string path, yadisk::ops::Node* parent = NULL)
