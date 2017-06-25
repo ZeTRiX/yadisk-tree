@@ -19,8 +19,8 @@ using namespace url;
  \param[in] путь
  \return возвращает дерево - слепок диска
  **/
-  
-  ops::Tree tree(Client& client, path home = (char)'/') ;
+  char home = '/';
+  ops::Tree tree(Client& client, path home);
 
  /**
  Добавление данных
