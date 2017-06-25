@@ -1,12 +1,12 @@
 #ifndef TREE_HPP
 #define TREE_HPP
 
-//nclude "Client.hpp"
-//nclude "Tree.hpp"
-//#include "url/path.hpp"
+include "Client.hpp"
+include "Tree.hpp"
+#include "url/path.hpp"
 
-using yadisk::Client;
-using yadisk::ops::Tree;
+//using yadisk::Client;
+//using yadisk::ops::Tree;
  
 namespace yadisk 
 {
