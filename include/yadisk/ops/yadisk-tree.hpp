@@ -10,9 +10,9 @@
 
 
  
-namespace yadisk 
-{
- 
+
+using namespace yadisk; 
+using namespace url;
  /**
  Получение слепка диска
  \param[in] ссылка на client-yadisk
@@ -20,13 +20,13 @@ namespace yadisk
  \return возвращает дерево - слепок диска
  **/
   
-  ops::Tree tree(Client& client, url::path home = (char)'/') ;
+  ops::Tree tree(Client& client, path home = (char)'/') ;
 
  /**
  Добавление данных
  \param[in] указатель на дерево
  \param[in] путь
  **/ 
-  void recursive_add(Tree& input, string path, yadisk::ops::Node* parent = NULL)
-}
+  void recursive_add(ops::Tree& input, string path, ops::Node* parent = NULL)
+
 #endif
