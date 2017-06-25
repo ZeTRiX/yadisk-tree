@@ -20,7 +20,7 @@ namespace yadisk
  \return возвращает дерево - слепок диска
  **/
   
-  ops::Tree tree(Client& client, url::path home = '/') ;
+  ops::Tree tree(Client& client, url::path home = (char)'/') ;
 
  /**
  Добавление данных
