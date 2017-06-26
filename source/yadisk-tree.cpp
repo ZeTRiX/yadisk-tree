@@ -1,24 +1,20 @@
-#include "url/path.hpp"
 #include "yadisk/ops/yadisk-tree.hpp"
 
-
-namespace yadisk{
- 
-
+namespace yadisk
+{
 	namespace ops
-
 	{	
-		auto tree(Client& client, path home = '/') -> Tree&
+		Tree tree(Client& client, path home)
 		{
-		  Tree* client_tree = new Tree;
+			Tree client_tree = new Tree;
+			json data = client.info();
 
-		recursive_add(client_tree, "/");
-		return *client_tree;
+			recursive_add(client_tree, data, "/");
+			return client_tree;
 		}
 
-		void recursive_add(Tree& input, std::string path, Node* parent = NULL)
+		void recursive_add(Tree& input, json& data, std::string path, Node* parent)
 		{
-			json data = client.info();
 			Resource rsc(data);
 
 			Node* node = input.add_child(rsc, parent);
@@ -30,9 +26,6 @@ namespace yadisk{
 					else
 						recursive_add(input, path + "/" + data["_embedded"]["items"][i]["name"].get<string>(), node);
 				}
-
 		}
 	}
 }
-	
-
