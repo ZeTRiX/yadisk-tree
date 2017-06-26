@@ -19,7 +19,7 @@ namespace yadisk
  	\param[in] путь
  	\return возвращает дерево - слепок диска
  	**/
- 	  	Tree tree(Client& client, path home = '/');
+ 	  	Tree tree(Client& client, path home = "/");
 
  	/**
  	Добавление данных
