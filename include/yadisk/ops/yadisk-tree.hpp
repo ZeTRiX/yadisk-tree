@@ -5,28 +5,28 @@
 #include <yadisk/ops/Tree.hpp>
 #include <url/path.hpp>
 
-//using yadisk::Client;
-//using yadisk::ops::Tree;
+using yadisk::Client;
+using url::path;
+using yadisk::ops::Tree;
 
+namespace yadisk 
+{
+    namespace ops 
+    {
+ 	/**
+ 	Получение слепка диска
+ 	\param[in] ссылка на client-yadisk
+ 	\param[in] путь
+ 	\return возвращает дерево - слепок диска
+ 	**/
+ 	  	Tree tree(Client& client, path home = '/');
 
- 
-
-using namespace yadisk; 
-using namespace url;
- /**
- Получение слепка диска
- \param[in] ссылка на client-yadisk
- \param[in] путь
- \return возвращает дерево - слепок диска
- **/
-  char home = '/';
-  ops::Tree tree(Client& client, path home);
-
- /**
- Добавление данных
- \param[in] указатель на дерево
- \param[in] путь
- **/ 
-  void recursive_add(ops::Tree& input, string path, ops::Node* parent = NULL);
-
+ 	/**
+ 	Добавление данных
+ 	\param[in] указатель на дерево
+	 \param[in] путь
+	 **/ 
+		void recursive_add(Tree& input, json& data, std::string path, Node* parent = NULL);
+    }
+}
 #endif
