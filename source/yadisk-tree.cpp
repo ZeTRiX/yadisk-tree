@@ -6,11 +6,11 @@ namespace yadisk
 	{	
 		Tree tree(Client& client, path home)
 		{
-			Tree client_tree = new Tree;
+			Tree* client_tree = new Tree;
 			json data = client.info();
 
-			recursive_add(client_tree, data, "/");
-			return client_tree;
+			recursive_add(client_tree, data, home.string());
+			return *client_tree;
 		}
 
 		void recursive_add(Tree& input, json& data, std::string path, Node* parent)
@@ -21,10 +21,10 @@ namespace yadisk
 
 			for (int32_t i = 0; i < data["_embedded"]["total"].get<int32_t>(); i++)
 				if (data["_embedded"]["items"][i]["type"].get<string>() == "dir") {
-					if (path[path.size() - 1] == '/')
-						recursive_add(input, path + data["_embedded"]["items"][i]["name"].get<string>(), node);
+					if (path[path.size() - 1] == "/")
+						recursive_add(input, data, path + data["_embedded"]["items"][i]["name"].get<string>(), node);
 					else
-						recursive_add(input, path + "/" + data["_embedded"]["items"][i]["name"].get<string>(), node);
+						recursive_add(input, data, path + "/" + data["_embedded"]["items"][i]["name"].get<string>(), node);
 				}
 		}
 	}
