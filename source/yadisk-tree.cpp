@@ -20,7 +20,7 @@ namespace yadisk
 
 			for (int32_t i = 0; i < data["_embedded"]["total"].get<int32_t>(); i++)
 				if (data["_embedded"]["items"][i]["type"].get<string>() == "dir") {
-					if (path[path.size() - 1] == "/")
+					if (path[path.size() - 1] == '/')
 						recursive_add(input, data, path + data["_embedded"]["items"][i]["name"].get<string>(), child_node);
 					else
 						recursive_add(input, data, path + "/" + data["_embedded"]["items"][i]["name"].get<string>(), child_node);
