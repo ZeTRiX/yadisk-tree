@@ -13,20 +13,20 @@ namespace yadisk
 {
     namespace ops 
     {
- 	/**
- 	Получение слепка диска
- 	\param[in] ссылка на client-yadisk
- 	\param[in] путь
- 	\return возвращает дерево - слепок диска
- 	**/
- 	  	Tree tree(Client& client, path home = '/');
+		/**
+		Получение слепка диска
+		\param[in] ссылка на client-yadisk
+		\param[in] путь
+		\return возвращает дерево - слепок диска
+		**/
+ 	  	Tree tree(Client& client, path home = "/");
 
- 	/**
- 	Добавление данных
- 	\param[in] указатель на дерево
-	 \param[in] путь
-	 **/ 
-		void recursive_add(Tree& input, json& data, std::string path, Node* parent = NULL);
+		/**
+		Добавление данных
+		\param[in] указатель на дерево
+		 \param[in] путь
+		 **/ 
+		void recursive_add(Tree& input, json& data, std::string path, Node& parent = nullptr);
     }
 }
 #endif
