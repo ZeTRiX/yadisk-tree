@@ -13,13 +13,8 @@ addons:
     packages:
       - cmake-data
       - cmake
-      - doxygen
-      - doxygen-doc
 
 script:
 - cmake -H. -B_builds
 - cmake --build _builds/
 - cmake --build _builds/ --target yadisk-tree
-#- cmake --build _builds/ --target test
-#- cmake --build _builds/ --target package
-- doxygen docs/doxygen.conf
