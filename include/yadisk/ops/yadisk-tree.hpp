@@ -26,7 +26,7 @@ namespace yadisk
 		\param[in] указатель на дерево
 		 \param[in] путь
 		 **/ 
-		void recursive_add(Tree& input, const json& data, std::string path, Node* parent = NULL);
+		void recursive_add(Tree* input, const json& data, std::string path, Node* parent = NULL);
     }
 }
 #endif
