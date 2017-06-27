@@ -13,7 +13,7 @@ namespace yadisk
 			return *client_tree;
 		}
 
-		void recursive_add(Tree& input, const json& data, std::string path, Node& parent)
+		void recursive_add(Tree& input, const json& data, std::string path, Node* parent)
 		{
 			Resource rsc(data);
 			Node* child_node = input.add_child(rsc, parent);
